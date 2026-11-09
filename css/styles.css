@@ -517,3 +517,37 @@ a.footer-contact-item:hover,a.footer-contact-item:focus-visible{color:#78ece0}
 @media(prefers-reduced-motion:reduce){
  .treatments-section .service-card>.service-card-media img{transition:none}
 }
+
+
+/* Dropdown Institucional: aberto por clique, não apenas hover */
+.site-header-modern .nav-dropdown>.dropdown-toggle{
+  display:inline-flex;align-items:center;justify-content:space-between;gap:8px;
+  padding:12px 13px;background:transparent;border:0;border-radius:24px;
+  color:#f2ffff;font-family:inherit;font-size:12px;font-weight:700;line-height:1.4;
+  text-transform:none;letter-spacing:0;white-space:nowrap;cursor:pointer;
+  transition:background .2s,color .2s
+}
+.site-header-modern .nav-dropdown>.dropdown-toggle:hover,
+.site-header-modern .nav-dropdown>.dropdown-toggle.active,
+.site-header-modern .nav-dropdown.is-open>.dropdown-toggle{
+  background:#0a9597;color:#fff
+}
+.site-header-modern .nav-dropdown .dropdown-menu{display:none!important}
+.site-header-modern .nav-dropdown.is-open .dropdown-menu{display:block!important}
+.site-header-modern .nav-dropdown>.dropdown-toggle .chevron{
+  display:inline-block;flex:none;width:7px;height:7px;margin:-3px 0 0 2px;
+  border-right:1.8px solid currentColor;border-bottom:1.8px solid currentColor;
+  font-size:0;line-height:0;transform:rotate(45deg);
+  transition:transform .22s ease,margin .22s ease
+}
+.site-header-modern .nav-dropdown:hover>.dropdown-toggle .chevron,
+.site-header-modern .nav-dropdown:focus-within>.dropdown-toggle .chevron{transform:rotate(45deg);margin-top:-3px}
+.site-header-modern .nav-dropdown.is-open>.dropdown-toggle .chevron,
+.site-header-modern .nav-dropdown.is-open:hover>.dropdown-toggle .chevron,
+.site-header-modern .nav-dropdown.is-open:focus-within>.dropdown-toggle .chevron{transform:rotate(225deg);margin-top:3px}
+@media(max-width:1150px){.site-header-modern .nav-dropdown>.dropdown-toggle{padding:10px 9px;font-size:11px}}
+@media(max-width:900px){
+  .site-header-modern .nav-dropdown>.dropdown-toggle{width:100%;padding:13px 14px;font-size:13px;border-radius:8px}
+  .site-header-modern .nav-dropdown .dropdown-menu{position:static;margin:0 0 5px 14px;padding:2px 0;background:#00333d;border:0;border-radius:8px;box-shadow:none;min-width:0}
+}
+@media(prefers-reduced-motion:reduce){.site-header-modern .nav-dropdown>.dropdown-toggle,.site-header-modern .nav-dropdown>.dropdown-toggle .chevron{transition:none}}
