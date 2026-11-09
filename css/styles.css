@@ -332,3 +332,34 @@ strong{color:var(--teal);font-weight:800}
  .infra-visit{padding:38px 0}.infra-visit-inner{align-items:flex-start;flex-direction:column}.infra-visit h2{font-size:29px}.visit-address{min-width:0;width:100%;padding:18px}
 }
 @media(max-width:390px){.infra-feature-grid{grid-template-columns:1fr}.infra-slide{flex-basis:100%}}
+
+
+/* Footer premium — DCI */
+.footer{background:#003b45;color:#e9f5f5;position:relative;overflow:hidden}
+.footer:before{content:"";position:absolute;inset:0 0 auto;height:3px;background:linear-gradient(90deg,#00a9a3,#55d6c6,transparent)}
+.footer-main{display:grid;grid-template-columns:1.15fr .7fr 1.25fr;gap:clamp(32px,5vw,80px);padding:65px 0 60px;align-items:start}
+.footer-about,.footer-links{border:0}
+.footer .brand-footer{margin:0 0 24px}
+.footer .brand-footer .brand-symbol{width:38px;height:38px}
+.footer .brand-footer .brand-word{font-size:30px}
+.footer-about p{max-width:310px;margin:0 0 22px;font-size:14px;line-height:1.85;color:#c4dcdf}
+.footer-location{display:inline-flex;align-items:center;gap:9px;color:#7fe2d8;font-size:12px;font-weight:700}
+.footer-location:before{content:"";width:7px;height:7px;border-radius:50%;background:#4bddcf;box-shadow:0 0 0 4px #4bddcf21}
+.footer-links{display:flex;flex-direction:column;align-items:flex-start;gap:12px;padding:0}
+.footer-links h3,.footer-contact h3{margin:0 0 12px;color:#fff;font-size:15px;font-weight:800;letter-spacing:.7px;text-transform:uppercase}
+.footer-links h3:after,.footer-contact h3:after{content:"";display:block;width:34px;height:2px;margin-top:12px;background:#13bdb1;border-radius:2px}
+.footer-links a{font-size:13px;color:#c9dddf;line-height:1.35;transition:color .2s,transform .2s}
+.footer-links a:hover,.footer-links a:focus-visible{color:#77eadf;transform:translateX(4px)}
+.footer-contact{display:flex;flex-direction:column;gap:14px}
+.footer-contact-intro{font-size:13px;line-height:1.75;color:#c4dcdf;margin:0 0 4px}
+.footer-contact-item{display:flex;flex-direction:column;gap:3px;font-size:13px;line-height:1.5;color:#effbfa;overflow-wrap:anywhere}
+.footer-contact-item .footer-contact-label{font-size:11px;color:#72d8d0;text-transform:uppercase;letter-spacing:.7px;font-weight:800}
+a.footer-contact-item:hover,a.footer-contact-item:focus-visible{color:#78ece0}
+.footer-cta{display:inline-flex;align-items:center;justify-content:space-between;gap:20px;align-self:flex-start;margin-top:8px;background:#11b8ae;color:#003b45;padding:13px 18px;border-radius:9px;font-size:12px;font-weight:800;transition:background .2s,transform .2s}
+.footer-cta:hover,.footer-cta:focus-visible{background:#74e6db;color:#003b45;transform:translateY(-2px)}
+.footer-cta span{font-size:18px;line-height:1}
+.footer-bottom{border-top:1px solid #ffffff24;background:#00343e}
+.footer-bottom .wrap{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;padding:19px 0;font-size:10px;line-height:1.6;color:#bad0d3}
+@media(max-width:950px){.footer-main{grid-template-columns:1fr .65fr 1.1fr;gap:28px;padding:50px 0}.footer-bottom .wrap{justify-content:flex-start}}
+@media(max-width:680px){.footer-main{grid-template-columns:1fr 1fr;gap:35px 22px;padding:44px 0 38px}.footer-about{grid-column:1/-1}.footer-about p{max-width:440px}.footer-links{padding:0}.footer-contact{grid-column:auto;border:0;padding:0}.footer-cta{padding:11px 12px;font-size:11px}.footer-bottom .wrap{flex-direction:column;align-items:flex-start;gap:5px;padding:16px 0;font-size:10px}}
+@media(max-width:430px){.footer-main{grid-template-columns:1fr;gap:33px}.footer-about,.footer-contact{grid-column:auto}.footer-links{gap:11px}.footer-cta{width:100%;justify-content:space-between;padding:13px 16px}}
