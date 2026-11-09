@@ -453,3 +453,23 @@ a.footer-contact-item:hover,a.footer-contact-item:focus-visible{color:#78ece0}
  .page-about .about-hero .page-hero-inner>div{padding:34px 5% 32px}
  .page-about .about-hero .page-hero-inner>img{width:100%;height:230px;min-height:0;max-height:none;object-position:center 45%;border-radius:0;border:0;border-top:4px solid var(--teal)}
 }
+
+
+/* Animações de scroll e microinterações — DCI */
+@media (prefers-reduced-motion: no-preference){
+  .scroll-reveal{opacity:1;transform:none}
+  .scroll-reveal.reveal-pending{opacity:0;transform:translate3d(0,22px,0)}
+  .scroll-reveal.reveal-pending.is-visible{opacity:1;transform:translate3d(0,0,0)}
+  .scroll-reveal.reveal-pending{transition:opacity .65s cubic-bezier(.2,.7,.2,1),transform .65s cubic-bezier(.2,.7,.2,1);transition-delay:var(--reveal-delay,0ms)}
+  .service-card,.blog-card,.mini-blog-grid article,.purpose-card,.infra-feature-grid article,.infra-slide,.values-grid>div{transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease;background-color .28s ease}
+  .service-card:hover,.blog-card:hover,.mini-blog-grid article:hover,.purpose-card:hover,.infra-feature-grid article:hover,.infra-slide:hover{transform:translateY(-5px);box-shadow:0 18px 38px rgba(0,53,64,.15)}
+  .values-grid>div:hover{background:#eaf8f6;transform:translateY(-2px)}
+  .service-card img,.blog-card>img,.mini-blog-grid img,.infra-slide img{transition:transform .55s cubic-bezier(.2,.7,.2,1)}
+  .service-card:hover img,.blog-card:hover>img,.mini-blog-grid article:hover img,.infra-slide:hover img{transform:scale(1.045)}
+  .service-card,.blog-card,.mini-blog-grid article,.infra-slide{isolation:isolate}
+  .service-card a,.blog-card a,.mini-blog-grid a,.text-link{transition:color .2s ease}
+  .service-card a:hover,.blog-card a:hover,.mini-blog-grid a:hover,.text-link:hover{color:#006c70}
+  .service-card.reveal-pending.is-visible:hover,.blog-card.reveal-pending.is-visible:hover,.mini-blog-grid article.reveal-pending.is-visible:hover,.purpose-card.reveal-pending.is-visible:hover,.infra-feature-grid article.reveal-pending.is-visible:hover,.infra-slide.reveal-pending.is-visible:hover{transform:translateY(-5px)}
+}
+@media (hover:none){.service-card:hover,.blog-card:hover,.mini-blog-grid article:hover,.purpose-card:hover,.infra-feature-grid article:hover,.infra-slide:hover,.values-grid>div:hover{transform:none}.service-card:hover img,.blog-card:hover>img,.mini-blog-grid article:hover img,.infra-slide:hover img{transform:none}}
+@media (prefers-reduced-motion:reduce){.scroll-reveal,.scroll-reveal.reveal-pending{opacity:1!important;transform:none!important;transition:none!important}.service-card,.blog-card,.mini-blog-grid article,.purpose-card,.infra-feature-grid article,.infra-slide,.values-grid>div,.service-card img,.blog-card>img,.mini-blog-grid img,.infra-slide img{transition:none!important}}
