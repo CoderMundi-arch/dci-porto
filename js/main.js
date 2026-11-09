@@ -96,6 +96,43 @@ document.addEventListener("DOMContentLoaded", () => {
     newsletter.reset();
   });
 
+
+  // Carrossel de destaques: três cards desktop, dois tablet e um mobile.
+  const highlightViewport = document.querySelector(".blog-highlights-viewport");
+  const highlightTrack = document.querySelector(".blog-highlights-track");
+  const highlightCards = highlightTrack ? [...highlightTrack.children] : [];
+  const highlightDots = document.querySelector(".blog-highlights-dots");
+  if (highlightViewport && highlightTrack && highlightCards.length && highlightDots) {
+    let selectedHighlight = 0;
+    const visibleHighlights = () => window.matchMedia("(max-width: 680px)").matches ? 1
+      : window.matchMedia("(max-width: 950px)").matches ? 2 : 3;
+    const maxHighlight = () => Math.max(0, highlightCards.length - visibleHighlights());
+    const drawHighlights = () => {
+      selectedHighlight = Math.max(0, Math.min(selectedHighlight, maxHighlight()));
+      const gap = parseFloat(getComputedStyle(highlightTrack).gap) || 0;
+      const width = highlightCards[0].getBoundingClientRect().width;
+      highlightTrack.style.transform = `translate3d(-${selectedHighlight * (width + gap)}px,0,0)`;
+      highlightDots.replaceChildren();
+      for (let i = 0; i <= maxHighlight(); i++) {
+        const dot = document.createElement("button");
+        dot.type = "button";
+        dot.setAttribute("aria-label", `Mostrar destaque ${i + 1}`);
+        dot.classList.toggle("active", i === selectedHighlight);
+        dot.setAttribute("aria-current", i === selectedHighlight ? "true" : "false");
+        dot.addEventListener("click", () => { selectedHighlight = i; drawHighlights(); });
+        highlightDots.appendChild(dot);
+      }
+    };
+    highlightViewport.addEventListener("keydown", event => {
+      if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+      event.preventDefault();
+      selectedHighlight = event.key === "ArrowRight" ? Math.min(maxHighlight(), selectedHighlight + 1) : Math.max(0, selectedHighlight - 1);
+      drawHighlights();
+    });
+    window.addEventListener("resize", drawHighlights);
+    drawHighlights();
+  }
+
   // Carrossel da galeria de infraestrutura.
   const track = document.querySelector(".infra-track");
   const slides = [...document.querySelectorAll(".infra-slide")];
