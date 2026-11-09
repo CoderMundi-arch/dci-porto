@@ -579,3 +579,18 @@ a.footer-contact-item:hover,a.footer-contact-item:focus-visible{color:#78ece0}
 .site-header-modern .nav-dropdown.is-open{z-index:101}
 .site-header-modern .nav-dropdown.is-open .dropdown-menu{pointer-events:auto}
 .site-header-modern .nav-dropdown:not(.is-open) .dropdown-menu{pointer-events:none}
+
+
+/* Mobile: submenu Institucional recolhido por padrão, sem destaque permanente */
+@media(max-width:900px){
+ .site-header-modern .nav-dropdown:not(.is-open)>.dropdown-toggle,
+ .site-header-modern .nav-dropdown:not(.is-open)>.dropdown-toggle.active{
+   background:transparent;
+   color:#f2ffff;
+ }
+ .site-header-modern .nav-dropdown:not(.is-open) .dropdown-menu{display:none!important}
+ .site-header-modern .nav-dropdown.is-open>.dropdown-toggle{background:#0a9597;color:#fff}
+ .site-header-modern .nav-dropdown.is-open .dropdown-menu{display:block!important}
+ .site-header-modern .nav-dropdown:not(.is-open)>.dropdown-toggle .chevron{transform:rotate(45deg);margin-top:-3px}
+ .site-header-modern .nav-dropdown.is-open>.dropdown-toggle .chevron{transform:rotate(225deg);margin-top:3px}
+}
