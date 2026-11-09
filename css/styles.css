@@ -473,3 +473,25 @@ a.footer-contact-item:hover,a.footer-contact-item:focus-visible{color:#78ece0}
 }
 @media (hover:none){.service-card:hover,.blog-card:hover,.mini-blog-grid article:hover,.purpose-card:hover,.infra-feature-grid article:hover,.infra-slide:hover,.values-grid>div:hover{transform:none}.service-card:hover img,.blog-card:hover>img,.mini-blog-grid article:hover img,.infra-slide:hover img{transform:none}}
 @media (prefers-reduced-motion:reduce){.scroll-reveal,.scroll-reveal.reveal-pending{opacity:1!important;transform:none!important;transition:none!important}.service-card,.blog-card,.mini-blog-grid article,.purpose-card,.infra-feature-grid article,.infra-slide,.values-grid>div,.service-card img,.blog-card>img,.mini-blog-grid img,.infra-slide img{transition:none!important}}
+
+
+/* Seta do dropdown Institucional — alinhamento e animação */
+.site-header-modern .nav-dropdown>a .chevron{
+  display:inline-block;
+  flex:none;
+  width:7px;
+  height:7px;
+  margin:-3px 0 0 2px;
+  border-right:1.8px solid currentColor;
+  border-bottom:1.8px solid currentColor;
+  transform:rotate(45deg);
+  transform-origin:center;
+  font-size:0;
+  line-height:0;
+  transition:transform .22s ease,margin .22s ease;
+}
+@media(hover:hover){
+  .site-header-modern .nav-dropdown:hover>a .chevron{transform:rotate(225deg);margin-top:3px}
+}
+.site-header-modern .nav-dropdown:focus-within>a .chevron{transform:rotate(225deg);margin-top:3px}
+@media(prefers-reduced-motion:reduce){.site-header-modern .nav-dropdown>a .chevron{transition:none}}
