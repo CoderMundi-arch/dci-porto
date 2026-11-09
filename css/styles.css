@@ -441,3 +441,15 @@ a.footer-contact-item:hover,a.footer-contact-item:focus-visible{color:#78ece0}
 .site-header-modern .dropdown-menu a:hover,.site-header-modern .dropdown-menu a.active{background:#0b5d62;color:#fff}
 }
 @media(max-width:520px){.site-header-modern .header-shell{min-height:70px;gap:9px}.site-header-modern .header-brand .brand-symbol{width:32px;height:32px;border-width:4px}.site-header-modern .header-brand .brand-symbol:before{width:13px;height:13px}.site-header-modern .header-brand .brand-word{font-size:26px}.site-header-modern .brand-descriptor{font-size:7px;padding-left:7px}.site-header-modern .header-cta{min-height:39px;padding:9px 11px}.site-header-modern .header-cta svg{width:17px;height:17px}.site-header-modern .header-cta span{display:none}.site-header-modern .menu-toggle{width:39px;height:39px}}
+
+
+/* Banner Quem Somos — largura total do viewport */
+.page-about .about-hero{width:100%;max-width:none;overflow:hidden;background:linear-gradient(105deg,#f1f9f9 0%,#fff 55%,#eaf7f6 100%)}
+.page-about .about-hero .page-hero-inner{width:100%;max-width:none;margin:0;min-height:350px;display:grid;grid-template-columns:50% 50%;align-items:stretch}
+.page-about .about-hero .page-hero-inner>div{align-self:center;padding:52px 36px 52px max(4.5vw,calc((100vw - 1180px)/2))}
+.page-about .about-hero .page-hero-inner>img{display:block;width:100%;height:100%;min-height:350px;max-height:420px;object-fit:cover;object-position:center 48%;border-radius:180px 0 0 180px;border-left:5px solid var(--teal)}
+@media(max-width:680px){
+ .page-about .about-hero .page-hero-inner{grid-template-columns:1fr;min-height:0}
+ .page-about .about-hero .page-hero-inner>div{padding:34px 5% 32px}
+ .page-about .about-hero .page-hero-inner>img{width:100%;height:230px;min-height:0;max-height:none;object-position:center 45%;border-radius:0;border:0;border-top:4px solid var(--teal)}
+}
