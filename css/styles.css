@@ -594,3 +594,9 @@ a.footer-contact-item:hover,a.footer-contact-item:focus-visible{color:#78ece0}
  .site-header-modern .nav-dropdown:not(.is-open)>.dropdown-toggle .chevron{transform:rotate(45deg);margin-top:-3px}
  .site-header-modern .nav-dropdown.is-open>.dropdown-toggle .chevron{transform:rotate(225deg);margin-top:3px}
 }
+
+/* Ícones sólidos nos valores institucionais */
+.values-grid .value-icon{display:flex;align-items:center;justify-content:center;width:38px;height:38px;color:#00aaa7;flex:none}
+.values-grid .value-icon svg{display:block;width:30px;height:30px;fill:currentColor}
+.values-grid>div{gap:9px}
+@media(max-width:680px){.values-grid .value-icon{width:36px;height:36px}.values-grid .value-icon svg{width:27px;height:27px}}
