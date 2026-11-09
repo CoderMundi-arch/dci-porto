@@ -495,3 +495,25 @@ a.footer-contact-item:hover,a.footer-contact-item:focus-visible{color:#78ece0}
 }
 .site-header-modern .nav-dropdown:focus-within>a .chevron{transform:rotate(225deg);margin-top:3px}
 @media(prefers-reduced-motion:reduce){.site-header-modern .nav-dropdown>a .chevron{transition:none}}
+
+
+/* Correção dos cards: recorte real das bordas embutidas nas fotografias */
+.treatments-section .service-grid{align-items:stretch}
+.treatments-section .service-card{display:flex;flex-direction:column;height:100%;min-width:0;overflow:hidden;border-radius:16px;background:#fff}
+.treatments-section .service-card>.service-card-media{position:relative;display:block;width:100%;aspect-ratio:16/10;overflow:hidden;padding:0;background:#dde9e8;flex:none}
+.treatments-section .service-card>.service-card-media img{display:block;width:100%;height:100%;aspect-ratio:auto;object-fit:cover;object-position:center;transform:scale(1.14);transform-origin:center;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.treatments-section .service-card>.service-card-body{display:flex;flex-direction:column;flex:1;min-height:0;padding:19px 20px 24px}
+.treatments-section .service-card .card-kicker{align-self:flex-start}
+.treatments-section .service-card h3{min-height:0;line-height:1.25}
+.treatments-section .service-card p{min-height:0;margin:0 0 23px;flex:1}
+.treatments-section .service-card .service-card-body>a{align-self:flex-start;margin-top:auto}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){
+ .treatments-section .service-card:hover .service-card-media img{transform:scale(1.19)}
+}
+@media(max-width:680px){
+ .treatments-section .service-card>.service-card-body{padding:15px 14px 19px}
+ .treatments-section .service-card p{margin-bottom:18px}
+}
+@media(prefers-reduced-motion:reduce){
+ .treatments-section .service-card>.service-card-media img{transition:none}
+}
