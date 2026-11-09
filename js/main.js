@@ -44,7 +44,11 @@ document.addEventListener("DOMContentLoaded", () => {
     : document.body.classList.contains("page-contact") ? "contact"
     : document.body.classList.contains("page-infrastructure") ? "infrastructure" : "";
   if (page) {
-    const active = document.querySelector(`.main-nav [data-page="${page}"]`);
+    // Em "Quem somos", realçar o link interno, não o botão que abre o submenu.
+    const selector = page === "about"
+      ? '.main-nav .dropdown-menu a[href="quem-somos.html"]'
+      : `.main-nav [data-page="${page}"]`;
+    const active = document.querySelector(selector);
     if (active) active.classList.add("active");
   }
 
