@@ -10,6 +10,33 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+
+  // Submenu Institucional: alterna por clique e fecha ao clicar fora ou pressionar Escape.
+  const institutionalDropdown = document.querySelector(".site-header-modern .nav-dropdown");
+  const institutionalToggle = institutionalDropdown?.querySelector(".dropdown-toggle");
+  if (institutionalDropdown && institutionalToggle) {
+    const setDropdownOpen = (open) => {
+      institutionalDropdown.classList.toggle("is-open", open);
+      institutionalToggle.setAttribute("aria-expanded", String(open));
+    };
+    institutionalToggle.addEventListener("click", () => {
+      setDropdownOpen(!institutionalDropdown.classList.contains("is-open"));
+    });
+    document.addEventListener("pointerdown", (event) => {
+      if (!institutionalDropdown.contains(event.target)) setDropdownOpen(false);
+    });
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && institutionalDropdown.classList.contains("is-open")) {
+        setDropdownOpen(false);
+        institutionalToggle.focus();
+      }
+    });
+    institutionalDropdown.querySelectorAll(".dropdown-menu a").forEach(link => {
+      link.addEventListener("click", () => setDropdownOpen(false));
+    });
+    if (toggle && nav) toggle.addEventListener("click", () => setDropdownOpen(false));
+  }
+
   // Destaca automaticamente a página atual no menu.
   const page = document.body.classList.contains("page-home") ? "home"
     : document.body.classList.contains("page-about") ? "about"
