@@ -98,4 +98,27 @@ document.addEventListener("DOMContentLoaded", () => {
     render();
   }
 
+
+  // Animações progressivas ao entrar na área visível; acessível e sem bloqueio de conteúdo.
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!reduceMotion && "IntersectionObserver" in window) {
+    const targets = [...document.querySelectorAll(
+      ".section-title, .intro-strip, .hero-copy, .story-copy, .purpose-card, .service-card, .course-promo, .about-teaser, .mini-blog-grid article, .blog-card, .featured-article, .newsletter, .values-grid > div, .about-banner, .contact-intro, .contact-form, .info-panel, .infra-hero-inner, .infra-intro-grid, .infra-feature-grid article, .infra-slide, .infra-team-grid, .infra-visit-inner"
+    )];
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.08, rootMargin: "0px 0px -28px 0px" });
+    targets.forEach((item, index) => {
+      item.classList.add("scroll-reveal", "reveal-pending");
+      const siblings = item.parentElement ? [...item.parentElement.children].filter(node => node.matches(".service-card, .blog-card, .purpose-card, .infra-feature-grid article, .mini-blog-grid article, .values-grid > div")) : [];
+      const position = siblings.indexOf(item);
+      if (position >= 0) item.style.setProperty("--reveal-delay", Math.min(position % 4, 3) * 75 + "ms");
+      observer.observe(item);
+    });
+  }
+
 });
